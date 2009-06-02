@@ -96,6 +96,10 @@ public class DefaultIdentityResolver implements IdentityResolver {
         HttpServletRequest request = loginContext.getRequest();
 
         String redirectUrl = loginPageUrl;
+        // Absolutify urls relative to context path
+        if(!redirectUrl.startsWith("http") && !redirectUrl.startsWith("/")) {
+            redirectUrl = request.getContextPath() + "/" + loginPageUrl;
+        }
 
         // For relative links switch to HTTPS if specified
         if (!redirectUrl.startsWith("http") && ! request.isSecure() && useTransportSecurity) {
