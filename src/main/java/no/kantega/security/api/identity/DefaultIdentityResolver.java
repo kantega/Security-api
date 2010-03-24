@@ -48,27 +48,29 @@ public class DefaultIdentityResolver implements IdentityResolver {
 
         DefaultAuthenticatedIdentity authenticatedIdentity = null;
         String identity = (String)session.getAttribute(authenticationContext + SESSION_IDENTITY_NAME);
-        if (identity == null && request.getUserPrincipal() != null) {
-            identity = request.getUserPrincipal().getName();
-        }
+        if (identity == null) {
+            if (request.getUserPrincipal() != null) {
+                identity = request.getUserPrincipal().getName();
+            }
+            if (request.getRemoteUser() != null) {
+                identity = request.getRemoteUser();
+            }
+            if (identity != null && identity.length() > 0) {
+                int inx = identity.indexOf("\\");
+                if (inx != -1) {
+                    identity = identity.substring(inx + 1, identity.length());
+                    identity = identity.toLowerCase();
+                }
 
-        if (identity == null && request.getRemoteUser() != null) {
-            identity = request.getRemoteUser();
+                inx = identity.lastIndexOf("@");
+                if (inx != -1) {
+                    identity = identity.substring(0, inx);
+                    identity = identity.toLowerCase();
+                }
+            }
         }
 
         if (identity != null && identity.length() > 0) {
-            int inx = identity.indexOf("\\");
-            if (inx != -1) {
-                identity = identity.substring(inx + 1, identity.length());
-                identity = identity.toLowerCase();
-            }
-
-            inx = identity.indexOf("@");
-            if (inx != -1) {
-                identity = identity.substring(0, inx);
-                identity = identity.toLowerCase();
-            }
-
             authenticatedIdentity = new DefaultAuthenticatedIdentity(this);
 
             String domain = (String)session.getAttribute(authenticationContext + SESSION_IDENTITY_DOMAIN);
