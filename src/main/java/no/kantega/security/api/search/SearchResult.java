@@ -20,8 +20,8 @@ import java.util.Iterator;
 
 /**
  */
-public interface SearchResult {
+public interface SearchResult<T> {
     int getSize();
-    Iterator getAllResults();
-    Iterator getResults(int offset, int max);
+    Iterator<T> getAllResults();
+    Iterator<T> getResults(int offset, int max);
 }

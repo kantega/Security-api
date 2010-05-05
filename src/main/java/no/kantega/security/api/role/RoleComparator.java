@@ -22,8 +22,10 @@ import java.text.Collator;
 
 /**
  */
-public class RoleComparator implements Comparator {
-    public int compare(Object o1, Object o2) {
-        return ((Role) o1).getName().compareTo(((Role) o2).getName());
+public class RoleComparator implements Comparator<Role> {
+
+    public int compare(Role r1, Role r2) {
+        return r1.getName().compareTo(r2.getName());
     }
+
 }

@@ -25,10 +25,10 @@ import java.util.Iterator;
 /**
  */
 public interface RoleManager {
-    Iterator getAllRoles() throws SystemException;
-    SearchResult searchRoles(String query) throws SystemException;
+    Iterator<Role> getAllRoles() throws SystemException;
+    SearchResult<Role> searchRoles(String query) throws SystemException;
     Role getRoleById(RoleId roleId) throws SystemException;
-    Iterator getRolesForUser(Identity identity) throws SystemException;
-    Iterator getUsersWithRole(RoleId roleId) throws SystemException;
+    Iterator<Role> getRolesForUser(Identity identity) throws SystemException;
+    Iterator<Identity> getUsersWithRole(RoleId roleId) throws SystemException;
     boolean userHasRole(Identity identity, String roleId) throws SystemException;
 }

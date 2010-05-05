@@ -20,12 +20,13 @@ import java.util.Comparator;
 
 /**
  */
-public class ProfileComparator implements Comparator {
-    public int compare(Object o1, Object o2) {
-        int c = ((Profile) o1).getGivenName().compareTo(((Profile) o2).getGivenName());
+public class ProfileComparator implements Comparator<Profile> {
+
+    public int compare(Profile p1, Profile p2) {
+        int c = p1.getGivenName().compareTo(p2.getGivenName());
         if (c != 0) {
             return c;
         }
-        return ((Profile) o1).getSurname().compareTo(((Profile) o2).getSurname());
+        return p1.getSurname().compareTo(p2.getSurname());
     }
 }

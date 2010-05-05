@@ -23,7 +23,7 @@ import no.kantega.security.api.common.SystemException;
 /**
  */
 public interface ProfileManager {
-    SearchResult searchProfiles(String query) throws SystemException;
+    SearchResult<Profile> searchProfiles(String query) throws SystemException;
     Profile getProfileForUser(Identity identity) throws SystemException;
     boolean userHasProfile(Identity identity) throws SystemException;
 }

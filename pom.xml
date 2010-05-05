@@ -19,14 +19,14 @@
     <parent>
         <groupId>org.kantega.opensource-parent</groupId>
         <artifactId>opensource-parent</artifactId>
-        <version>1.0</version>
+        <version>1.1</version>
     </parent>
     
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.kantega.security-api</groupId>
     <artifactId>security-api</artifactId>
     <packaging>jar</packaging>
-    <version>1.93-SNAPSHOT</version>
+    <version>2.0-SNAPSHOT</version>
     <name>Kantega Security API</name>
     <url>http://opensource.kantega.no/sites/security-api/</url>
 
