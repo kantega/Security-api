@@ -41,7 +41,7 @@ public class DefaultIdentityResolver implements IdentityResolver {
      * @throws IdentificationFailedException
      */
     public AuthenticatedIdentity getIdentity(HttpServletRequest request) throws IdentificationFailedException {
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(false);
         if (session == null) {
             return null;
         }
