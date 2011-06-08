@@ -20,10 +20,13 @@ import no.kantega.security.api.search.SearchResult;
 import no.kantega.security.api.identity.Identity;
 import no.kantega.security.api.common.SystemException;
 
+import java.util.List;
+
 /**
  */
 public interface ProfileManager {
     SearchResult<Profile> searchProfiles(String query) throws SystemException;
     Profile getProfileForUser(Identity identity) throws SystemException;
+    SearchResult<Profile> getProfileForUsers(List<Identity> identities) throws SystemException;
     boolean userHasProfile(Identity identity) throws SystemException;
 }
