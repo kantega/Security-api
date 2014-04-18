@@ -16,37 +16,37 @@ package no.kantega.security.api.search;
  * limitations under the License.
  */
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ArrayList;
 
 /**
  */
-public class DefaultSearchResult implements SearchResult {
-    List results = new ArrayList();
+public class DefaultSearchResult<T> implements SearchResult<T> {
+    List<T> results = new ArrayList<>();
 
     public int getSize() {
         return results.size();
     }
 
-    public Iterator getAllResults() {
+    public Iterator<T> getAllResults() {
         return results.iterator();
     }
 
-    public Iterator getResults(int offset, int max) {
+    public Iterator<T> getResults(int offset, int max) {
         if (offset == 0 && max <= results.size()) {
             return getAllResults();
         } else {
-            List subList = results.subList(offset, offset + max);
+            List<T> subList = results.subList(offset, offset + max);
             return subList.iterator();
         }
     }
 
-    public void addResult(Object o) {
+    public void addResult(T o) {
         results.add(o);
     }
 
-    public void setResults(List results) {
+    public void setResults(List<T> results) {
         this.results = results;
     }
 }

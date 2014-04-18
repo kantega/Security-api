@@ -25,7 +25,7 @@ import java.util.List;
 /**
  */
 public class DefaultRoleSearchResult implements SearchResult<Role> {
-    List<Role> results = new ArrayList<Role>();
+    List<Role> results = new ArrayList<>();
 
     public int getSize() {
         return results.size();
