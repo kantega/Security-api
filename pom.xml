@@ -26,12 +26,12 @@
     <groupId>org.kantega.security-api</groupId>
     <artifactId>security-api</artifactId>
     <packaging>jar</packaging>
-    <version>2.8</version>
+    <version>2.9-SNAPSHOT</version>
     <name>Kantega Security API</name>
     <url>http://opensource.kantega.no/sites/security-api/</url>
 
     <scm>
-        <connection>scm:svn:https://opensource.kantega.no/svn/security-api/tags/security-api-2.8</connection>
+        <connection>scm:svn:https://opensource.kantega.no/svn/security-api/trunk</connection>
     </scm>
 
     <dependencies>
