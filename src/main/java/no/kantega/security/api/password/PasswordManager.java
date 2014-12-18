@@ -26,7 +26,7 @@ public interface PasswordManager {
      * Verify a users password
      * @param identity
      * @param password
-     * @return
+     * @return true if password is valid for identity.
      * @throws SystemException
      */
     public boolean verifyPassword(Identity identity, String password) throws SystemException;

@@ -1,8 +1,5 @@
 package no.kantega.security.api.password;
 
-import java.util.Date;
-
-
 public class DefaultResetPasswordToken implements ResetPasswordToken {
     private String token;
 
