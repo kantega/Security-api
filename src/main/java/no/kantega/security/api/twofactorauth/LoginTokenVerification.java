@@ -16,17 +16,21 @@
 package no.kantega.security.api.twofactorauth;
 
 /**
- * Default implementation of <code>LoginToken</code>,
- * simply allows creation of a string token.
+ * The result of an verification of a <code>LoginToken</code>.
  */
-public class DefaultLoginToken implements LoginToken {
-    private final String token;
+public enum LoginTokenVerification {
+    /**
+     * The provided <code>LoginToken</code> matched stored value.
+     */
+    VALID,
 
-    public DefaultLoginToken(String token) {
-        this.token = token;
-    }
+    /**
+     * The provided <code>LoginToken</code> did not match a stored value.
+     */
+    INVALID,
 
-    public String getToken() {
-        return token;
-    }
+    /**
+     * The provided <code>LoginToken</code> matched stored value, but has timed out.
+     */
+    EXPIRED
 }
