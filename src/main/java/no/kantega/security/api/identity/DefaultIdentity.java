@@ -19,8 +19,8 @@ package no.kantega.security.api.identity;
 /**
  */
 public class DefaultIdentity implements Identity {
-    String userId;
-    String domain;
+    private String userId;
+    private String domain;
 
     public String getUserId() {
         return userId;
@@ -36,5 +36,12 @@ public class DefaultIdentity implements Identity {
 
     public void setDomain(String domain) {
         this.domain = domain;
+    }
+
+    public static Identity withDomainAndUserId(String domain, String userId){
+        DefaultIdentity identity = new DefaultIdentity();
+        identity.setDomain(domain);
+        identity.setUserId(userId);
+        return identity;
     }
 }

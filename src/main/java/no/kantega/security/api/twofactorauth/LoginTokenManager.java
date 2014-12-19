@@ -11,13 +11,13 @@ public interface LoginTokenManager {
      * @param identity - user which to generate token for
      * @return token
      */
-    public LoginToken generateResetPasswordToken(Identity identity);
+    public LoginToken generateLoginToken(Identity identity);
 
     /**
      * Delete  tokens for given identity
      * @param identity - user which to generate token for
      */
-    public void deleteTokensForIdentity(Identity identity);
+    public void deleteLoginTokensForIdentity(Identity identity);
 
     /**
      * Verify <code>LoginToken</code> for identity.
@@ -25,6 +25,6 @@ public interface LoginTokenManager {
      * @param token - token needed to Log in.
      * @return true if token was ok, false is token was wrong or expired.
      */
-    public boolean verifyPasswordToken(Identity identity, LoginToken token);
+    public boolean verifyLoginToken(Identity identity, LoginToken token);
 
 }
