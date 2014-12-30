@@ -15,6 +15,7 @@
  */
 package no.kantega.security.api.twofactorauth;
 
+import no.kantega.security.api.common.SystemException;
 import no.kantega.security.api.profile.Profile;
 
 /**
@@ -25,6 +26,8 @@ public interface LoginTokenSender {
      * Send token to the user.
      * @param profile representing the user that needs <code>LoginToken</code>.
      * @param loginToken to send to the user.
+     * @throws no.kantega.security.api.common.SystemException when sending of <code>LoginToken</code> failes.
+     * @throws java.lang.IllegalArgumentException when the property specifying the recipient is missing.
      */
-    public void sendTokenToUser(Profile profile, LoginToken loginToken);
+    public void sendTokenToUser(Profile profile, LoginToken loginToken) throws IllegalArgumentException, SystemException;
 }
