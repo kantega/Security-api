@@ -5,7 +5,9 @@ import no.kantega.security.api.identity.Identity;
 
 import java.util.Date;
 
-
+/**
+ * Responsible for generating, deleting and verifying <code>ResetPasswordToken</code>s.
+ */
 public interface ResetPasswordTokenManager {
     /**
      * Generate a token which can be used to reset a password
