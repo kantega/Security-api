@@ -26,13 +26,14 @@
     <groupId>org.kantega.security-api</groupId>
     <artifactId>security-api</artifactId>
     <packaging>jar</packaging>
-    <version>2.9-SNAPSHOT</version>
+    <version>2.9</version>
     <name>Kantega Security API</name>
     <url>http://opensource.kantega.no/sites/security-api/</url>
 
     <scm>
         <connection>scm:git:git@gitlab.kantega.no:flyt-cms/security-api.git</connection>
-    </scm>
+      <tag>security-api-2.9</tag>
+  </scm>
 
     <dependencies>
         <dependency>
